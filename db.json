@@ -1,0 +1,23 @@
+{
+  "propertyList": [
+    {
+      "propertyName": "Property 1",
+      "propertyType": "Individual",
+      "propertyFor": "Buy",
+      "propertyPrice": 1500,
+      "propertyDesc": "Prop desc",
+      "date": "2022-04-30T18:30:00.000Z",
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

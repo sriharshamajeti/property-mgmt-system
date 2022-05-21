@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>Add Property</h1>
+<div mat-dialog-content>
+   <form [formGroup]="propertyForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Property Name</mat-label>
+            <input formControlName="propertyName" matInput placeholder="Name">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Property Type</mat-label>
+            <mat-select formControlName="propertyType" placeholder="Type">
+                <mat-option value="Studio">Studio</mat-option>
+                <mat-option value="Appartment">Appartment</mat-option>
+                <mat-option value="Individual">Individual</mat-option>
+                <mat-option value="Duplex">Duplex</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input formControlName="date" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <label for=""><h2>Property For</h2></label>
+        <mat-radio-group formControlName="propertyFor" class="example-radio-group">
+            <mat-radio-button class="example-radio-button" *ngFor="let propFor of propertyFor" [value]="propFor">
+                {{propFor}}
+            </mat-radio-button>
+        </mat-radio-group>
+        <mat-form-field appearance="outline">
+            <mat-label>Size</mat-label>
+            <input matInput formControlName="propertyPrice" type="number" placeholder="Size in sq.ft">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="propertyDesc"></textarea>
+        </mat-form-field>
+   </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addProperty()">{{actionBtn}}</button>
+</div>
