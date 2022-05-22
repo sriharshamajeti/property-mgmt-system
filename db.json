@@ -2,11 +2,8 @@
   "propertyList": [
     {
       "propertyName": "Property 1",
-      "propertyType": "Individual",
-      "propertyFor": "Buy",
-      "propertyPrice": 1500,
-      "propertyDesc": "Prop desc",
-      "date": "2022-04-30T18:30:00.000Z",
+      "propertySize": 1200,
+      "propertyDesc": "East facing on shores of Baltic sea",
       "id": 1
     }
   ],

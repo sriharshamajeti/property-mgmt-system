@@ -24,22 +24,16 @@ export class AddDailogComponent implements OnInit {
   ngOnInit(): void {
     this.propertyForm = this.formBuilder.group({
       propertyName : ['', Validators.required],
-      propertyType : ['', Validators.required],
-      propertyFor : ['', Validators.required],
-      propertyPrice : ['', Validators.required],
+      propertySize : ['', Validators.required],
       propertyDesc : ['', Validators.required],
-      date : ['', Validators.required]
 
     })
 
     if(this.editProperty) {
       this.actionBtn = "Update";
       this.propertyForm.controls['propertyName'].setValue(this.editProperty.propertyName);
-      this.propertyForm.controls['propertyType'].setValue(this.editProperty.propertyType);
-      this.propertyForm.controls['propertyFor'].setValue(this.editProperty.propertyFor);
-      this.propertyForm.controls['propertyPrice'].setValue(this.editProperty.propertyPrice);
+      this.propertyForm.controls['propertySize'].setValue(this.editProperty.propertySize);
       this.propertyForm.controls['propertyDesc'].setValue(this.editProperty.propertyDesc);
-      this.propertyForm.controls['date'].setValue(this.editProperty.date);
     }
   }
   addProperty() {

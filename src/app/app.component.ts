@@ -14,8 +14,9 @@ import {MatTableDataSource} from '@angular/material/table';
 export class AppComponent implements OnInit{
   title = 'Property Management System';
 
-  displayedColumns: string[] = ['propertyName', 'propertyType', 'propertyFor', 'propertyDesc', 'propertyPrice', 'date', 'action'];
+  displayedColumns: string[] = ['propertyName', 'propertyDesc', 'propertySize'];
   dataSource !: MatTableDataSource<any>;
+  rowSelected: any;
 
   @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
@@ -60,17 +61,22 @@ export class AppComponent implements OnInit{
     })
   }
 
-  deleteProperty(id: number) {
-    this.get.deleteProperty(id)
+  deleteProperty() {
+    this.get.deleteProperty(this.rowSelected)
     .subscribe({
       next:(res)=>{
         alert("Property deleted Successfully");
         this.getPropertyList();
       },
       error:()=>{
-        alert("Error while deleting Property")
+        alert("Please select a row before deleting")
       }
     })
+  }
+
+  selectedRow(row: number) {
+    this.rowSelected = row;
+    console.log(this.rowSelected)
   }
 
   applyFilter(event: Event) {
